@@ -1,0 +1,35 @@
+---
+# mc_isaac description of the mc_rtc robot module g1_29dof_revo2 (MainRobot G1_Revo2): Unitree G1 29 DOF with two
+# BrainCo Revo2 hands, floating base
+usd: "@G1_USD_DIR@/g1_revo2.usd"
+# g1_revo2.usd references these USDs (relative to its folder), uploaded with it to the Isaac server
+extra_files: [g1_no_hands.usd, revo2_left.usd, revo2_right.usd]
+fixed: false
+# like g1_mj_description (overlapping pairs at rest are filtered in the USD)
+self_collisions: true
+# PhysX joint drives (force drives, rad units), gains from g1_mj_description pdgains/g1_29dof_revo2/PDgains_sim.dat
+# *_distal_joint of the hands are PhysX mimic joints (follow their proximal joint), no drive
+drives:
+  - {joints: "left_hip_pitch_joint", stiffness: 200.0, damping: 4.0}
+  - {joints: "left_hip_roll_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "left_hip_yaw_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "left_knee_joint", stiffness: 210.0, damping: 6.0}
+  - {joints: "left_ankle_pitch_joint", stiffness: 150.0, damping: 4.0}
+  - {joints: "left_ankle_roll_joint", stiffness: 150.0, damping: 3.0}
+  - {joints: "right_hip_pitch_joint", stiffness: 200.0, damping: 3.0}
+  - {joints: "right_hip_roll_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "right_hip_yaw_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "right_knee_joint", stiffness: 210.0, damping: 6.0}
+  - {joints: "right_ankle_pitch_joint", stiffness: 150.0, damping: 3.0}
+  - {joints: "right_ankle_roll_joint", stiffness: 150.0, damping: 3.0}
+  - {joints: "waist_yaw_joint", stiffness: 300.0, damping: 10.0}
+  - {joints: "waist_roll_joint", stiffness: 300.0, damping: 3.0}
+  - {joints: "waist_pitch_joint", stiffness: 300.0, damping: 3.0}
+  - {joints: "(left|right)_shoulder_(pitch|roll)_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "(left|right)_shoulder_yaw_joint", stiffness: 50.0, damping: 2.0}
+  - {joints: "(left|right)_elbow_joint", stiffness: 50.0, damping: 2.0}
+  - {joints: "(left|right)_wrist_(roll|pitch|yaw)_joint", stiffness: 2.0, damping: 2.0}
+  - {joints: "(left|right)_thumb_metacarpal_joint", stiffness: 20.0, damping: 1.0}
+  - {joints: "(left|right)_thumb_proximal_joint", stiffness: 40.0, damping: 1.2}
+  - {joints: "(left|right)_(index|middle|ring)_proximal_joint", stiffness: 35.0, damping: 1.0}
+  - {joints: "(left|right)_pinky_proximal_joint", stiffness: 30.0, damping: 0.8}

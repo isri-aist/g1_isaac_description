@@ -1,0 +1,28 @@
+---
+# mc_isaac description of the mc_rtc robot module g1_29dof_no_hands (MainRobot G1_no_hands): Unitree G1 29 DOF with
+# tool connectors instead of hands, floating base
+usd: "@G1_USD_DIR@/g1_no_hands.usd"
+fixed: false
+# like g1_mj_description (overlapping pairs at rest are filtered in the USD)
+self_collisions: true
+# PhysX joint drives (force drives, rad units), gains from g1_mj_description pdgains/g1_29dof_no_hands/PDgains_sim.dat
+drives:
+  - {joints: "left_hip_pitch_joint", stiffness: 200.0, damping: 4.0}
+  - {joints: "left_hip_roll_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "left_hip_yaw_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "left_knee_joint", stiffness: 210.0, damping: 6.0}
+  - {joints: "left_ankle_pitch_joint", stiffness: 150.0, damping: 4.0}
+  - {joints: "left_ankle_roll_joint", stiffness: 150.0, damping: 3.0}
+  - {joints: "right_hip_pitch_joint", stiffness: 200.0, damping: 3.0}
+  - {joints: "right_hip_roll_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "right_hip_yaw_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "right_knee_joint", stiffness: 210.0, damping: 6.0}
+  - {joints: "right_ankle_pitch_joint", stiffness: 150.0, damping: 3.0}
+  - {joints: "right_ankle_roll_joint", stiffness: 150.0, damping: 3.0}
+  - {joints: "waist_yaw_joint", stiffness: 300.0, damping: 10.0}
+  - {joints: "waist_roll_joint", stiffness: 300.0, damping: 3.0}
+  - {joints: "waist_pitch_joint", stiffness: 300.0, damping: 3.0}
+  - {joints: "(left|right)_shoulder_(pitch|roll)_joint", stiffness: 100.0, damping: 2.0}
+  - {joints: "(left|right)_shoulder_yaw_joint", stiffness: 50.0, damping: 2.0}
+  - {joints: "(left|right)_elbow_joint", stiffness: 50.0, damping: 2.0}
+  - {joints: "(left|right)_wrist_(roll|pitch|yaw)_joint", stiffness: 2.0, damping: 2.0}
