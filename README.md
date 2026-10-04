@@ -1,6 +1,6 @@
 # g1_isaac_description
 
-This package provides the Unitree G1 humanoid models for `mc_isaac` (Isaac Sim simulation of
+This package provides the Unitree G1 humanoid models for [mc_isaac](https://github.com/isri-aist/mc_isaac) (Isaac Sim simulation of
 [mc_rtc](https://jrl-umi3218.github.io/mc_rtc/) controllers), like `g1_mj_description` does for
 [mc_mujoco](https://github.com/rohanpsingh/mc_mujoco).
 
